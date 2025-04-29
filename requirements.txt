@@ -1,4 +1,9 @@
 tinydb
 pydantic
+langchain-community
+langchain
+langchainhub
+langgraph
+langchain-openai
+langchain-core
 
-#33
