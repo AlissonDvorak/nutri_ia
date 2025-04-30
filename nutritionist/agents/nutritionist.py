@@ -30,3 +30,29 @@ class NutritionistAgent:
             temperature=0.1,
             openai_api_key=os.getenv("OPENAI_API_KEY"),
         )
+        
+        self.memory = SqliteMemory(
+            session_id=self.session_id,
+        ).history
+        
+        self.tools = []
+        
+        self.agent = initialize_agent(
+            llm=self.llm,
+            tools=self.tools,
+            agent=AgentType.STRUCTURED_CHAT_ZERO_SHOT_REACT_DESCRIPTION,
+            verbose=True,
+            memory=self.memory,
+            agent_kwargs={
+                "system_message": SYSTEM_PROMPT,
+            },
+            )
+        
+    def run(self, input_text: str):
+        try:
+            response = self.agent.invoke(input_text)
+            return response.get("output")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            return "Desculpe, não consegui processar sua solicitação no momento. Tente novamente mais tarde."
+       
