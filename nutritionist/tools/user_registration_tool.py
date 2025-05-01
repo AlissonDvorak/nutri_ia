@@ -55,5 +55,5 @@ class UserRegistrationTool(BaseModel):
             return f"Erro ao registrar o usuário: {str(e)}"
         
             
-    def _arun(self, **kwargs: Any) -> str:
+    async def _arun(self, **kwargs: Any) -> str:
         raise NotImplementedError("Execucao assíncrona não suportada.")

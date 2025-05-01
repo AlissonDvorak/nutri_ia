@@ -3,6 +3,7 @@ from tinydb import Query
 from nutritionist.models import MealEntry
 from nutritionist.repositories.base_repository import BaseRepository
 from datetime import datetime
+import json
 
 
 class MealEntryRepository(BaseRepository):
@@ -29,7 +30,7 @@ class MealEntryRepository(BaseRepository):
             protein=protein,
             fat=fat,
         )
-        self.meal_entry_table.insert(meal_entry.model_dump())
+        self.meal_entry_table.insert(json.loads(meal_entry.model_dump_json()))
         return meal_entry
     
     def get_meal_entries_by_user_and_date(

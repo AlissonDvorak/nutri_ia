@@ -34,5 +34,5 @@ class UserInfoTool(BaseTool):
             return f"Ocorreu um erro ao buscar o usuário: {e}"
         
        
-    def _arun(self, telegram_id: int) -> str:
+    async def _arun(self, telegram_id: int) -> str:
         raise NotImplementedError("Execucao assíncrona não suportada.")

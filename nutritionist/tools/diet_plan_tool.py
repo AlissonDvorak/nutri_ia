@@ -37,5 +37,5 @@ class DietPlanTool(BaseTool):
             return f"Erro ao processar a solicitação do plano de dieta: {str(e)}"
         
              
-    def _arun(self, telegram_id: int, plan_details: Optional[str] = None) -> str:
+    async def _arun(self, telegram_id: int, plan_details: Optional[str] = None) -> str:
         raise NotImplementedError("Execucao assíncrona não suportada.")
