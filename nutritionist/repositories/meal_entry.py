@@ -61,5 +61,11 @@ class MealEntryRepository(BaseRepository):
         MealEntryQuery = Query()
         self.meal_entry_table.remove(MealEntryQuery.id == meal_entry_id)
         
+        
+    def get_meal_entry_by_id(self, meal_entry_id: int) -> Optional[MealEntry]:
+        MealEntryQuery = Query()
+        result = self.meal_entry_table.search(MealEntryQuery.user_id == meal_entry_id)
+        return result
+        
     def get_all_meal_entries(self) -> List[MealEntry]:
         return [MealEntry(**entry) for entry in self.meal_entry_table.all()]

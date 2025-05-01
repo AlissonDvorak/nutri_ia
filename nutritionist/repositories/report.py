@@ -3,6 +3,7 @@ from tinydb import Query
 from nutritionist.models import Report
 from nutritionist.repositories.base_repository import BaseRepository
 from datetime import datetime
+import json
 
 
 class ReportRepository(BaseRepository):
@@ -12,7 +13,7 @@ class ReportRepository(BaseRepository):
         
     def create_report(self, user_id: int, content: str) -> Report:
         report = Report(user_id=user_id, content=content)
-        self.report_table.insert(report.model_dump())
+        self.report_table.insert(json.loads(report.model_dump_json()))
         return report
     
     def get_reports_by_user_and_date(self, user_id: int, date: str) -> List[Report]:

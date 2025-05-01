@@ -18,7 +18,7 @@ class WeightHistoryRepository(BaseRepository):
         WeightHistoryQuery = Query()
         results = self.weight_history_table.search(WeightHistoryQuery.user_id == user_id)
         sorted_results = sorted(results, key=lambda result: result['date'])
-        return [WeightHistory(**result) for result in sorted_results]
+        return sorted_results
     
     def get_weight_entry_by_id(self, weight_entry_id: int) -> Optional[WeightHistory]:
         WeightHistoryQuery = Query()
