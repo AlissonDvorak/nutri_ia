@@ -4,6 +4,8 @@ from langchain.agents import initialize_agent, AgentType
 from dotenv import load_dotenv
 from nutritionist.chat.memory import SqliteMemory
 from nutritionist.tools.food_analyser_tool import FoodImageAnalyserTool
+from nutritionist.tools.user_info_tool import UserInfoTool
+from nutritionist.tools.user_registration_tool import UserRegistrationTool
 
 
 load_dotenv()
@@ -38,6 +40,8 @@ class NutritionistAgent:
         
         self.tools = [
             FoodImageAnalyserTool(),
+            UserInfoTool(),
+            UserRegistrationTool(),
         ]
         
         self.agent = initialize_agent(
