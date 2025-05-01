@@ -6,6 +6,7 @@ from nutritionist.chat.memory import SqliteMemory
 from nutritionist.tools.food_analyser_tool import FoodImageAnalyserTool
 from nutritionist.tools.user_info_tool import UserInfoTool
 from nutritionist.tools.user_registration_tool import UserRegistrationTool
+from nutritionist.tools.diet_plan_tool import DietPlanTool
 
 
 load_dotenv()
@@ -42,6 +43,7 @@ class NutritionistAgent:
             FoodImageAnalyserTool(),
             UserInfoTool(),
             UserRegistrationTool(),
+            DietPlanTool(),
         ]
         
         self.agent = initialize_agent(
