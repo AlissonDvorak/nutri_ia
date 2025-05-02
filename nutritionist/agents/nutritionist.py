@@ -2,14 +2,14 @@ import os
 from langchain_openai import ChatOpenAI
 from langchain.agents import initialize_agent, AgentType
 from dotenv import load_dotenv
-from nutritionist.chat.memory import SqliteMemory
-from nutritionist.tools.food_analyser_tool import FoodImageAnalyserTool
-from nutritionist.tools.user_info_tool import UserInfoTool
-from nutritionist.tools.user_registration_tool import UserRegistrationTool
-from nutritionist.tools.diet_plan_tool import DietPlanTool
-from nutritionist.tools.weight_update_tool import WeightUpdateTool
-from nutritionist.tools.meal_entry_tool import MealEntryTool
-from nutritionist.tools.report_tool import ReportTool
+from chat.memory import SqliteMemory
+from tools.food_analyser_tool import FoodImageAnalyserTool
+from tools.user_info_tool import UserInfoTool
+from tools.user_registration_tool import UserRegistrationTool
+from tools.diet_plan_tool import DietPlanTool
+from tools.weight_update_tool import WeightUpdateTool
+from tools.meal_entry_tool import MealEntryTool
+from tools.report_tool import ReportTool
 
 
 load_dotenv()

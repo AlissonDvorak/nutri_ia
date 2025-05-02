@@ -1,7 +1,7 @@
 from typing import Optional, List
 from tinydb import Query
-from nutritionist.models import DietPlan
-from nutritionist.repositories.base_repository import BaseRepository
+from models import DietPlan
+from repositories.base_repository import BaseRepository
 import json
 
 class DietPlanRepository(BaseRepository):
