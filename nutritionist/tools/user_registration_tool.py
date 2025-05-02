@@ -1,8 +1,8 @@
 from typing import Any, Dict, Type
 from pydantic import BaseModel
 from langchain.tools import BaseTool
-from nutritionist.repositories.user import UserRepository
-from nutritionist.models import User
+from repositories.user import UserRepository
+from models import User
 
 
 class UserRegistrationTool(BaseModel):

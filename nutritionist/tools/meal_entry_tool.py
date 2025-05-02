@@ -1,7 +1,7 @@
 from langchain.tools import BaseTool
 from typing import Any, Dict, Optional
-from nutritionist.repositories.user import  UserRepository
-from nutritionist.repositories.meal_entry import MealEntryRepository
+from repositories.user import  UserRepository
+from repositories.meal_entry import MealEntryRepository
 
 
 class MealEntryTool(BaseTool):
