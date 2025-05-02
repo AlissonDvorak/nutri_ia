@@ -69,7 +69,7 @@ class TelegramBot:
         agent = NutritionistAgent(session_id=str(user_id))
         
         try:
-            response = await agent.run(f'telegram_id:{user_id}' + f'{user_input}')
+            response = agent.run(f'telegram_id:{user_id}' + f' {user_input}')
         except Exception as e:
             self.logger.error(f"Erro ao processar a mensagem do usuário {user_id}: {e}", exc_info=True)
             response = "Desculpe, ocorreu um erro ao processar sua solicitação. Por favor, tente novamente."
